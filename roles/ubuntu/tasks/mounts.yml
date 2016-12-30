@@ -1,0 +1,51 @@
+- name: System drive
+  mount:
+    name: /
+    src: UUID=bfa3ece7-0472-4f39-9316-cf9f30875f77
+    fstype: ext4
+    opts: errors=remount-ro
+    passno: 1
+    state: present    
+
+- name: Mount data drives for storage
+  mount:
+    name: '{{ item.name }}'
+    src:  '{{ item.src }}'
+    fstype: ext4
+    passno: 2
+    state: present
+  with_items:
+    - { src: 'UUID=9090fb49-e217-45f6-9bdb-eee21f740969', name: '/mnt/system' }
+    - { src: 'UUID=506721bd-4f78-463e-9574-ba9f7c2ced07', name: '/mnt/data1' }
+    - { src: 'UUID=395bded6-2bbc-4974-a69b-cb6d9dfd8565', name: '/mnt/data2' }
+    - { src: 'UUID=3bce2d66-2295-4d3a-83d1-1f5f541eece8', name: '/mnt/parity' }
+    - { src: 'UUID=cd2d9524-488f-4920-a025-7587f4bcb8d5', name: '/mnt/recovery' }
+
+- name: Mount media mounts for easy access
+  mount:
+    name: '{{ item.name }}'
+    src:  '{{ item.src }}'
+    fstype: none
+    opts: bind
+    passno: 0
+    state: present
+  with_items:
+    - { src: '/mnt/system/download', name: '/media/incomplete' }
+    - { src: '/mnt/system/complete', name: '/media/complete' }
+    - { src: '/mnt/data1/Media/Movies', name: '/media/Movies' }
+    - { src: '/mnt/data2/Media/TV', name: '/media/TV' }
+    - { src: '/mnt/recovery/Media/Naughty', name: '/media/Naughty' }
+
+- name: rbind Mounts for NFS etc.
+  mount: 
+    name: '{{ item.name }}'
+    src:  '{{ item.src }}'
+    fstype: none
+    opts: rbind
+    passno: 0
+    state: present
+  with_items:
+    - { src: '/mnt/data1', name: '/data' }
+    - { src: '/media', name: '/export/Media' }
+    - { src: '/data', name: '/export/Data' }
+    - { src: '/mnt', name: '/export/Mounts' }
