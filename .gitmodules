@@ -1,0 +1,3 @@
+[submodule "roles/plexmediaserver"]
+	path = roles/plexmediaserver
+	url = https://github.com/jesperrasmussen/ansible-role-plex
