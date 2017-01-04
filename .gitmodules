@@ -1,3 +1,6 @@
 [submodule "roles/plexmediaserver"]
 	path = roles/plexmediaserver
 	url = https://github.com/jesperrasmussen/ansible-role-plex
+[submodule "roles/snapraid"]
+	path = roles/snapraid
+	url = https://github.com/jesperrasmussen/ansible-role-snapraid
