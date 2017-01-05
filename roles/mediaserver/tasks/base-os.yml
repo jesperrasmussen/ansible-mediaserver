@@ -1,0 +1,43 @@
+---
+- name: ensure os is up to date
+  apt:
+    update_cache: yes
+    upgrade: full
+    cache_valid_time: 300
+
+- name: install packages
+  apt: pkg={{ item }} state=present
+  with_items:
+    - zsh
+    - curl
+    - exiftool
+    - fuse
+    - glances
+    - git
+    - htop
+    - iftop
+    - iotop
+    - jq
+    - mc
+    - ncdu
+    - nmap
+    - openssh-server
+    - python
+    - reptyr
+    - screen
+    - smartmontools
+    - sudo
+    - tmux
+    - tree
+    - wget
+  tags:
+    - packages
+
+- name: create /mnt points
+  file:
+    dest: "/mnt/{{ item }}"
+    state: directory
+    owner: nobody
+    group: nogroup
+    mode: 0777
+  with_items: "{{ mntpoints }}"

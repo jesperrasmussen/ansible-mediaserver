@@ -1,0 +1,7 @@
+---
+mntpoints:
+  - system
+  - data1
+  - data2
+  - parity
+  - recovery
