@@ -1,0 +1,6 @@
+---
+- name: create user jesperrasmussen
+  user:
+    name: jesperrasmussen
+    state: present
+    groups: "sudo,docker"
