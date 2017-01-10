@@ -1,4 +1,6 @@
 ---
 - hosts: mediaserver
+  become: true
   roles:
-    - ubuntu
+    - mediaserver
+    - snapraid
