@@ -37,7 +37,7 @@
   file:
     dest: "/mnt/{{ item }}"
     state: directory
-    owner: nobody
-    group: nogroup
+    owner: jesperrasmussen
+    group: users
     mode: 0777
   with_items: "{{ mntpoints }}"
