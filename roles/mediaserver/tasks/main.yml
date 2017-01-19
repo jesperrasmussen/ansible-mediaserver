@@ -9,3 +9,8 @@
   include: mounts.yml
   when: mounts
   tags: mounts
+
+- name: configure backups
+  include: backups.yml
+  when: backups
+  tags: backups
