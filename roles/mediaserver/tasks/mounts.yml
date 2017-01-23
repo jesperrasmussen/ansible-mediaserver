@@ -19,7 +19,7 @@
     - { src: 'UUID=506721bd-4f78-463e-9574-ba9f7c2ced07', name: '/mnt/data1' }
     - { src: 'UUID=395bded6-2bbc-4974-a69b-cb6d9dfd8565', name: '/mnt/data2' }
     - { src: 'UUID=3bce2d66-2295-4d3a-83d1-1f5f541eece8', name: '/mnt/parity' }
-    - { src: 'UUID=cd2d9524-488f-4920-a025-7587f4bcb8d5', name: '/mnt/recovery' }
+    - { src: 'UUID=205ed1a4-4d18-4191-8d35-dda42c8b6f26', name: '/mnt/data3' }
 
 - name: Mount media mounts for easy access
   mount:
@@ -34,7 +34,7 @@
     - { src: '/mnt/system/complete', name: '/media/complete' }
     - { src: '/mnt/data1/Media/Movies', name: '/media/Movies' }
     - { src: '/mnt/data2/Media/TV', name: '/media/TV' }
-    - { src: '/mnt/recovery/Media/Naughty', name: '/media/Naughty' }
+    - { src: '/mnt/data3/Media/Private', name: '/media/Private' }
 
 - name: rbind Mounts for NFS etc.
   mount: 

@@ -3,8 +3,8 @@ mntpoints:
   - system
   - data1
   - data2
+  - data3
   - parity
-  - recovery  
 
 snapraidconf: /etc/snapraid.conf
 rsnapshotconf: /etc/rsnapshot.conf
