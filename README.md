@@ -13,3 +13,4 @@ Currently, it covers the setup of the following - these will be marked once comp
 - [ ] SABnzbd
 - [ ] SickGear
 - [ ] CouchPotato
+- [ ] Plex Mediaserver
