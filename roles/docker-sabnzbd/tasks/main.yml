@@ -1,0 +1,22 @@
+- name: 'Start the sabnzbd docker container'
+  become_user: jesperrasmussen
+  docker_container:
+    image: "linuxserver/sabnzbd"
+    name: "{{ docker_sabnzbd_container_name }}"
+    env:
+      PUID: '1000'
+      PGID: '100'
+      TZ: 'Europe/Copenhagen'
+    volumes_from: '{{ docker_shared_container }}'
+    volumes:
+      - '{{ docker_shared_directory }}/configs/sabnzbd:/config'
+      - '{{ docker_shared_directory }}/temp/download:/incomplete'
+      - '{{ docker_shared_directory }}/temp/complete:/complete'
+      - '{{ docker_shared_directory }}/temp/complete/TV:/tv'
+      - '{{ docker_shared_directory }}/temp/complete/Movies:/movies'
+    ports: '8080:8080'
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "{{ docker_sabnzbd_container_name }}"

@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Jesper Rasmussen
+  description: |
+    Running Couchpotato on shared docker setup.
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+       - trusty
+  galaxy_tags:
+    - docker
+    - ubuntu
+    - couchpotato
+dependencies: []

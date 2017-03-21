@@ -1,0 +1,15 @@
+- name: 'Start the storage container'
+  become_user: jesperrasmussen
+  docker_container:
+    image: "tianon/true"
+    name: "shares"
+    env:
+      PUID: '0'
+      PGID: '0'
+    volumes:
+      - '{{ docker_shared_directory }}/configs:/configs'
+      - '/etc/localtime:/etc/localtime:ro'
+      - '{{ docker_shared_directory }}/media:/data'
+      - '{{ docker_shared_directory }}/temp:/temp'
+    state: 'started'
+    restart_policy: 'always'

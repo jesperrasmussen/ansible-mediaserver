@@ -1,0 +1,9 @@
+---
+# Sabnzbd host port
+docker_sabnzbd_exposed_port: '8080'
+
+# Docker container name
+docker_sabnzbd_container_name: 'sabnzbd'
+
+docker_shared_directory: '/home/jesperrasmussen/ultimate-media-server'
+docker_shared_container: 'shares'

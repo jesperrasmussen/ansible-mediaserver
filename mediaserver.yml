@@ -4,3 +4,7 @@
   roles:
     - mediaserver
     - snapraid
+    - docker-storage
+    - docker-sabnzbd
+    - docker-couchpotato
+    - docker-sonarr

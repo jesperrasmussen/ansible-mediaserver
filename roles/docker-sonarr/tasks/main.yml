@@ -1,0 +1,22 @@
+- name: 'Start the sonarr docker container'
+  become_user: jesperrasmussen
+  docker_container:
+    image: "linuxserver/sonarr"
+    name: "{{ docker_sabnzbd_container_name }}"
+    env:
+      PUID: '1000'
+      PGID: '100'
+      TZ: 'Europe/Copenhagen'
+    volumes_from: '{{ docker_shared_container }}'
+    volumes:
+      - '/dev/rtc:/dev/rtc:ro'
+      - '{{ docker_shared_directory }}/configs/sonarr:/config'
+      - '{{ docker_shared_directory }}/temp/complete/TV:/downloads'
+      - '{{ docker_shared_directory }}/temp/complete:/complete'
+      - '{{ docker_shared_directory }}/media:/tv'
+    ports: '8989:8989'
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "{{ docker_sabnzbd_container_name }}"
