@@ -10,7 +10,7 @@ Currently, it covers the setup of the following - these will be marked once comp
 - [X] Base install - setting up volumes
 - [X] SnapRaid for backup
 - [X] NFS
-- [ ] SABnzbd
-- [ ] SickGear
-- [ ] CouchPotato
+- [X] SABnzbd
+- [X] Sonarr
+- [X] CouchPotato
 - [ ] Plex Mediaserver
