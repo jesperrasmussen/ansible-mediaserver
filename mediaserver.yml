@@ -6,5 +6,5 @@
     - snapraid
     - docker-storage
     - docker-sabnzbd
-    - docker-couchpotato
+    - docker-radarr
     - docker-sonarr

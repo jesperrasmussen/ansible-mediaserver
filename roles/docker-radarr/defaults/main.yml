@@ -1,0 +1,7 @@
+---
+# Docker container name
+docker_sabnzbd_container_name: 'radarr'
+
+docker_shared_directory: '/home/jesperrasmussen/ultimate-media-server'
+
+docker_shared_container: 'shares'

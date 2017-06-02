@@ -1,0 +1,21 @@
+- name: 'Start the radarr docker container'
+  become_user: jesperrasmussen
+  docker_container:
+    image: "linuxserver/radarr"
+    name: "{{ docker_sabnzbd_container_name }}"
+    env:
+      PUID: '1000'
+      PGID: '100'
+      TZ: 'Europe/Copenhagen'
+    volumes_from: '{{ docker_shared_container }}'
+    volumes:
+      - '/etc/localtime:/etc/localtime:ro'
+      - '{{ docker_shared_directory }}/configs/radarr:/config'
+      - '{{ docker_shared_directory }}/temp/complete/Movies:/downloads'
+      - '{{ docker_shared_directory }}/media/Movies:/movies'
+    ports: '7878:7878'
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "{{ docker_sabnzbd_container_name }}"
