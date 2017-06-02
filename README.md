@@ -14,3 +14,9 @@ Currently, it covers the setup of the following - these will be marked once comp
 - [X] Sonarr
 - [X] CouchPotato
 - [ ] Plex Mediaserver
+- [ ] CrashPlan backup
+
+
+## Running the playbook
+
+  ansible-playbook -i hosts webserver.yml
