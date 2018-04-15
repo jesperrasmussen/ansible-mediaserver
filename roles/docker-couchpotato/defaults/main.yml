@@ -1,6 +1,0 @@
----
-# Docker container name
-docker_couch_container_name: 'couchpotato'
-docker_shared_directory: '/home/jesperrasmussen/ultimate-media-server'
-
-docker_shared_container: 'shares'
