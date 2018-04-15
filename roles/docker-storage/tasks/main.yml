@@ -12,4 +12,5 @@
       - '{{ docker_shared_directory }}/media:/data'
       - '{{ docker_shared_directory }}/temp:/temp'
     state: 'started'
+    pull: 'yes'
     restart_policy: 'always'

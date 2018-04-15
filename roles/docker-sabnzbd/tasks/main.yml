@@ -15,7 +15,8 @@
       - '{{ docker_shared_directory }}/temp/complete/TV:/tv'
       - '{{ docker_shared_directory }}/temp/complete/Movies:/movies'
     ports: '8080:8080'
-    state: 'present'
+    state: 'started'
+    pull: 'yes'
     restart_policy: 'always'
     log_driver: 'syslog'
     log_opt:

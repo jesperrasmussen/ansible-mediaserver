@@ -15,6 +15,7 @@
       - '{{ docker_shared_directory }}/media/Movies:/movies'
     ports: '7878:7878'
     state: 'started'
+    pull: 'yes'
     restart_policy: 'always'
     log_driver: 'syslog'
     log_opt:

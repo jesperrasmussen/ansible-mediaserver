@@ -16,6 +16,7 @@
       - '{{ docker_shared_directory }}/media:/tv'
     ports: '8989:8989'
     state: 'started'
+    pull: 'yes'
     restart_policy: 'always'
     log_driver: 'syslog'
     log_opt:
